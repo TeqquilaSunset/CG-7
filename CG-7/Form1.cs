@@ -28,12 +28,14 @@ namespace CG_7
         readonly float[] quad = {-1,-1,0, 1,-1,0, 1,1,0, -1,1,0 };
         readonly float[] normal = {-0.9f,0,1, -0.9f,0,0, -0.9f,0.5f,0, -0.9f,0.5f,1, 1,0,0, 1,1f,0, 1,1,1,
                                     1,0,1, 0.4f,0.5f,1, 0.4f,1,1, 0.4f,0.5f,0, 0.4f,1,0, };
-       
+
+        int s = 1;
 
         //флаг запуска таймера 
         bool flag = false;
 
         bool flagLeft = false;
+        bool flagTop = false;
 
         float anglc = 0;
         float anglLight = 65;
@@ -42,8 +44,8 @@ namespace CG_7
             InitializeComponent();
             holst.InitializeContexts();
             //прозрачность
-            //Gl.glBlendFunc(Gl.GL_SRC_ALPHA, Gl.GL_ONE_MINUS_SRC_ALPHA);
-            //Gl.glEnable(Gl.GL_BLEND);
+            Gl.glBlendFunc(Gl.GL_SRC_ALPHA, Gl.GL_ONE_MINUS_SRC_ALPHA);
+            Gl.glEnable(Gl.GL_BLEND);
 
             //буфер глубины для отсечения
             Gl.glEnable(Gl.GL_DEPTH_TEST);
@@ -67,9 +69,10 @@ namespace CG_7
             Gl.glViewport(0, 0, holst.Width, holst.Height);
             Gl.glClearColor(0, 0, 0, 1);
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
+            //Gl.glLightModelf(Gl.GL_LIGHT_MODEL_LOCAL_VIEWER, Gl.GL_FALSE);
             //Gl.glLightModelf(Gl.GL_LIGHT_MODEL_TWO_SIDE, Gl.GL_TRUE);
-            //float[] light0_dif = { 0.2f, 0.2f, 0.2f };
-            //Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_DIFFUSE, light0_dif);
+            float[] light0_dif = { 0.2f, 0.2f, 0.2f };
+            Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_AMBIENT_AND_DIFFUSE, light0_dif);
             
 
 
@@ -88,8 +91,9 @@ namespace CG_7
         {
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             Gl.glClear(Gl.GL_DEPTH_BUFFER_BIT);
+            Gl.glEnable(Gl.GL_NORMALIZE);
 
-            
+
 
             Gl.glPushMatrix();
             DrawCube();
@@ -102,25 +106,38 @@ namespace CG_7
 
         private void DrawLight()
         {
-            if (flagLeft == false)
+            if(flagTop == true)
             {
-                Gl.glRotatef(0, 0, 0, 1);
+                //Gl.glRotatef(-60, 1, 0, 0);
+                //Gl.glRotatef(33, 0, 0, 1);
+                //Gl.glTranslatef(0, 0, -4);
+                Gl.glPushMatrix();
+                //Gl.glRotatef(30, 0, 0, 1);
+                //Gl.glRotatef(anglLight, 0, 1, 0);
+                float[] light0_pos = { 0, 5, 0, 0 };
+                Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light0_pos);
+                //DrawQuad();
+                Gl.glPopMatrix();
+            }
+            else if (flagLeft == false)
+            {
                 Gl.glRotatef(-60, 1, 0, 0);
                 Gl.glRotatef(33, 0, 0, 1);
-                Gl.glTranslatef(2, 3, -2);
+                Gl.glTranslatef(2, 3, -3);
                 Gl.glPushMatrix();
-                Gl.glRotatef(anglLight, 1, 0, 0);
-                float[] light0_pos = { 0, 0f, 4f, 0 };
+                //Gl.glRotatef(30, 0, 0, 1);
+                Gl.glRotatef(anglLight, 0, 1, 0);
+                float[] light0_pos = { 0, 0, 3f, 0 };
                 Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light0_pos);
-                Gl.glTranslatef(0, 0, 4);
+                Gl.glTranslatef(0, 0, 3);
                 Gl.glScalef(0.4f, 0.4f, 0.4f);
                 Gl.glColor3f(0, 0, 0);
                 DrawQuad();
                 Gl.glPopMatrix();
             }
-            else
+            else if (flagLeft == true)
             {
-                Gl.glRotatef(0, 0, 0, 1);
+                Gl.glRotatef(-60, 0, 0, 1);
                 Gl.glRotatef(-60, 1, 0, 0);
                 Gl.glRotatef(33, 0, 0, 1);
                 Gl.glTranslatef(2, 3, -2);
@@ -153,9 +170,28 @@ namespace CG_7
             Gl.glEnableClientState(Gl.GL_VERTEX_ARRAY);
             Gl.glEnableClientState(Gl.GL_NORMAL_ARRAY);
             Gl.glVertexPointer(3, Gl.GL_FLOAT, 0, figure); //в качестве массива вершин используем
+            
+            float[] color_am = { 1, 0, 0 };
+            float[] color_am1 = { 1, 1, 0 };
+            float[] color_am2 = { 1, 0, 1 };
+            float[] color_am3 = { 1, 0, 1 };
+            if (s == 1)
+            {
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_AMBIENT, color_am);
+            }
+            if (s == 2)
+            {
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_DIFFUSE, color_am1);
+            }
+            if (s == 3)
+            {
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_SPECULAR, color_am2);
+            }
+            if (s == 4)
+            {
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_EMISSION, color_am3);
+            }
 
-            //float[] color_am = {0,0,0};
-            //Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_EMISSION, color_am);
             Gl.glRotatef(anglc, 0, 1, 0);
             Gl.glLineWidth(4);
             Gl.glColor3f(1, 1, 1);
@@ -164,6 +200,7 @@ namespace CG_7
             Gl.glDrawElements(Gl.GL_POLYGON, 6, Gl.GL_UNSIGNED_INT, indexPolygon);
             Gl.glDrawElements(Gl.GL_POLYGON, 6, Gl.GL_UNSIGNED_INT, indexPolygon2);
             Gl.glColor3f(0, 0, 0);
+
             Gl.glDrawElements(Gl.GL_LINES, 36, Gl.GL_UNSIGNED_INT, indexLines);
             Gl.glTranslated(-0.01, 0.01, 0);
             Gl.glDrawElements(Gl.GL_LINES, 2, Gl.GL_UNSIGNED_INT, indexLinesLoop);
@@ -238,13 +275,52 @@ namespace CG_7
         
         private void левоToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            flagTop = false;
             flagLeft = true;
             Draw();
         }
 
         private void правоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            flagLeft = true;
+            flagTop = false;
+            flagLeft = false;
+            Draw();
+        }
+
+        private void сВерхуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flagLeft = false;
+            flagLeft = false;
+            flagTop = true;
+            Draw();
+        }
+
+        private void сПередиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ambientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s = 1;
+            Draw();
+        }
+
+        private void diffuseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s = 2;
+            Draw();
+        }
+
+        private void specularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s = 3;
+            Draw();
+        }
+
+        private void emissionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s = 4;
             Draw();
         }
     }
