@@ -42,6 +42,9 @@
             this.правоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сВерхуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.offToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,7 +127,10 @@
             this.левоToolStripMenuItem,
             this.правоToolStripMenuItem,
             this.сВерхуToolStripMenuItem,
-            this.offToolStripMenuItem});
+            this.offToolStripMenuItem,
+            this.xToolStripMenuItem,
+            this.yToolStripMenuItem,
+            this.zToolStripMenuItem});
             this.светToolStripMenuItem.Name = "светToolStripMenuItem";
             this.светToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.светToolStripMenuItem.Text = "Свет";
@@ -156,6 +162,27 @@
             this.offToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.offToolStripMenuItem.Text = "off";
             this.offToolStripMenuItem.Click += new System.EventHandler(this.offToolStripMenuItem_Click);
+            // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xToolStripMenuItem.Text = "X";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
+            // 
+            // yToolStripMenuItem
+            // 
+            this.yToolStripMenuItem.Name = "yToolStripMenuItem";
+            this.yToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yToolStripMenuItem.Text = "Y";
+            this.yToolStripMenuItem.Click += new System.EventHandler(this.yToolStripMenuItem_Click);
+            // 
+            // zToolStripMenuItem
+            // 
+            this.zToolStripMenuItem.Name = "zToolStripMenuItem";
+            this.zToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zToolStripMenuItem.Text = "Z";
+            this.zToolStripMenuItem.Click += new System.EventHandler(this.zToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -189,6 +216,9 @@
         private System.Windows.Forms.ToolStripMenuItem правоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сВерхуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem offToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zToolStripMenuItem;
     }
 }
 

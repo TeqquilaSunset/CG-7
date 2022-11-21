@@ -191,6 +191,30 @@ namespace CG_7
                 float[] light0_pos = { 0, 0f, 4f, 0 };
                 Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light0_pos);
             }
+            else if (l == 5)
+            {
+                Gl.glPushMatrix();
+                float[] light0_pos = { 1, 0f, 0, 0 };
+                Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light0_pos);
+                //DrawQuad();
+                Gl.glPopMatrix();
+            }
+            else if (l == 6)
+            {
+                Gl.glPushMatrix();
+                float[] light0_pos = { 0, 1f, 0, 0 };
+                Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light0_pos);
+                //DrawQuad();
+                Gl.glPopMatrix();
+            }
+            else if (l == 7)
+            {
+                Gl.glPushMatrix();
+                float[] light0_pos = { 0, 0f, 1, 0 };
+                Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light0_pos);
+                //DrawQuad();
+                Gl.glPopMatrix();
+            }
 
         }
         private void DrawQuad()
@@ -409,6 +433,29 @@ namespace CG_7
         private void offToolStripMenuItem_Click(object sender, EventArgs e)
         {
             light = false;
+        }
+
+        private void правоToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            l = 5;
+            Draw();
+        }
+
+        private void yToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            l = 6;
+            Draw();
+        }
+
+        private void zToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            l = 7;
+            Draw();
         }
     }
 }
