@@ -41,6 +41,7 @@
             this.левоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сВерхуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.offToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,28 +93,28 @@
             // ambientToolStripMenuItem
             // 
             this.ambientToolStripMenuItem.Name = "ambientToolStripMenuItem";
-            this.ambientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ambientToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.ambientToolStripMenuItem.Text = "Ambient";
             this.ambientToolStripMenuItem.Click += new System.EventHandler(this.ambientToolStripMenuItem_Click);
             // 
             // diffuseToolStripMenuItem
             // 
             this.diffuseToolStripMenuItem.Name = "diffuseToolStripMenuItem";
-            this.diffuseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.diffuseToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.diffuseToolStripMenuItem.Text = "Diffuse";
             this.diffuseToolStripMenuItem.Click += new System.EventHandler(this.diffuseToolStripMenuItem_Click);
             // 
             // specularToolStripMenuItem
             // 
             this.specularToolStripMenuItem.Name = "specularToolStripMenuItem";
-            this.specularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.specularToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.specularToolStripMenuItem.Text = "Specular";
             this.specularToolStripMenuItem.Click += new System.EventHandler(this.specularToolStripMenuItem_Click);
             // 
             // emissionToolStripMenuItem
             // 
             this.emissionToolStripMenuItem.Name = "emissionToolStripMenuItem";
-            this.emissionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.emissionToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.emissionToolStripMenuItem.Text = "Emission";
             this.emissionToolStripMenuItem.Click += new System.EventHandler(this.emissionToolStripMenuItem_Click);
             // 
@@ -122,7 +123,8 @@
             this.светToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.левоToolStripMenuItem,
             this.правоToolStripMenuItem,
-            this.сВерхуToolStripMenuItem});
+            this.сВерхуToolStripMenuItem,
+            this.offToolStripMenuItem});
             this.светToolStripMenuItem.Name = "светToolStripMenuItem";
             this.светToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.светToolStripMenuItem.Text = "Свет";
@@ -147,6 +149,13 @@
             this.сВерхуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сВерхуToolStripMenuItem.Text = "С верху";
             this.сВерхуToolStripMenuItem.Click += new System.EventHandler(this.сВерхуToolStripMenuItem_Click);
+            // 
+            // offToolStripMenuItem
+            // 
+            this.offToolStripMenuItem.Name = "offToolStripMenuItem";
+            this.offToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.offToolStripMenuItem.Text = "off";
+            this.offToolStripMenuItem.Click += new System.EventHandler(this.offToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -179,6 +188,7 @@
         private System.Windows.Forms.ToolStripMenuItem левоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem правоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сВерхуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem offToolStripMenuItem;
     }
 }
 
