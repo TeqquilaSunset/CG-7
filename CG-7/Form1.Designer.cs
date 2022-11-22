@@ -45,6 +45,8 @@
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ambientTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вариант1GreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +90,8 @@
             this.ambientToolStripMenuItem,
             this.diffuseToolStripMenuItem,
             this.specularToolStripMenuItem,
-            this.emissionToolStripMenuItem});
+            this.emissionToolStripMenuItem,
+            this.ambientTestToolStripMenuItem});
             this.материалToolStripMenuItem.Name = "материалToolStripMenuItem";
             this.материалToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.материалToolStripMenuItem.Text = "Материал";
@@ -96,28 +99,28 @@
             // ambientToolStripMenuItem
             // 
             this.ambientToolStripMenuItem.Name = "ambientToolStripMenuItem";
-            this.ambientToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.ambientToolStripMenuItem.Text = "Ambient";
+            this.ambientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ambientToolStripMenuItem.Text = "Rubby";
             this.ambientToolStripMenuItem.Click += new System.EventHandler(this.ambientToolStripMenuItem_Click);
             // 
             // diffuseToolStripMenuItem
             // 
             this.diffuseToolStripMenuItem.Name = "diffuseToolStripMenuItem";
-            this.diffuseToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.diffuseToolStripMenuItem.Text = "Diffuse";
+            this.diffuseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.diffuseToolStripMenuItem.Text = "Gold";
             this.diffuseToolStripMenuItem.Click += new System.EventHandler(this.diffuseToolStripMenuItem_Click);
             // 
             // specularToolStripMenuItem
             // 
             this.specularToolStripMenuItem.Name = "specularToolStripMenuItem";
-            this.specularToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.specularToolStripMenuItem.Text = "Specular";
+            this.specularToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.specularToolStripMenuItem.Text = "Ambient off";
             this.specularToolStripMenuItem.Click += new System.EventHandler(this.specularToolStripMenuItem_Click);
             // 
             // emissionToolStripMenuItem
             // 
             this.emissionToolStripMenuItem.Name = "emissionToolStripMenuItem";
-            this.emissionToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.emissionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.emissionToolStripMenuItem.Text = "Emission";
             this.emissionToolStripMenuItem.Click += new System.EventHandler(this.emissionToolStripMenuItem_Click);
             // 
@@ -130,7 +133,8 @@
             this.offToolStripMenuItem,
             this.xToolStripMenuItem,
             this.yToolStripMenuItem,
-            this.zToolStripMenuItem});
+            this.zToolStripMenuItem,
+            this.вариант1GreenToolStripMenuItem});
             this.светToolStripMenuItem.Name = "светToolStripMenuItem";
             this.светToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.светToolStripMenuItem.Text = "Свет";
@@ -184,6 +188,20 @@
             this.zToolStripMenuItem.Text = "Z";
             this.zToolStripMenuItem.Click += new System.EventHandler(this.zToolStripMenuItem_Click);
             // 
+            // ambientTestToolStripMenuItem
+            // 
+            this.ambientTestToolStripMenuItem.Name = "ambientTestToolStripMenuItem";
+            this.ambientTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ambientTestToolStripMenuItem.Text = "Ambient test";
+            this.ambientTestToolStripMenuItem.Click += new System.EventHandler(this.ambientTestToolStripMenuItem_Click);
+            // 
+            // вариант1GreenToolStripMenuItem
+            // 
+            this.вариант1GreenToolStripMenuItem.Name = "вариант1GreenToolStripMenuItem";
+            this.вариант1GreenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.вариант1GreenToolStripMenuItem.Text = "Вариант 1 green";
+            this.вариант1GreenToolStripMenuItem.Click += new System.EventHandler(this.вариант1GreenToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,6 +237,8 @@
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ambientTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вариант1GreenToolStripMenuItem;
     }
 }
 
