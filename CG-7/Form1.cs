@@ -61,8 +61,8 @@ namespace CG_7
 
             //Gl.glEnable(Gl.GL_COLOR_MATERIAL);
             //Gl.glEnable(Gl.GL_DEPTH_TEST);
-            //Gl.glEnable(Gl.GL_LIGHTING);
-            //Gl.glEnable(Gl.GL_LIGHT0);
+            Gl.glEnable(Gl.GL_LIGHTING);
+            Gl.glEnable(Gl.GL_LIGHT0);
             //Gl.glEnable(Gl.GL_COLOR_MATERIAL);
             //Gl.glEnable(Gl.GL_NORMALIZE);
 
@@ -93,7 +93,7 @@ namespace CG_7
         {
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             Gl.glClear(Gl.GL_DEPTH_BUFFER_BIT);
-            Gl.glEnable(Gl.GL_NORMALIZE);
+            //Gl.glEnable(Gl.GL_NORMALIZE);
 
 
 
@@ -101,9 +101,9 @@ namespace CG_7
             DrawCube();
             Gl.glPopMatrix();
 
-            Gl.glPushMatrix();
-            DrawLight();
-            Gl.glPopMatrix();
+            //Gl.glPushMatrix();
+            //DrawLight();
+            //Gl.glPopMatrix();
 
             holst.Invalidate();
         }
@@ -125,27 +125,22 @@ namespace CG_7
 
         private void DrawCube()
         {
-         
-            Gl.glTranslated(0, 0, -4);
-            Gl.glRotatef(33, 1, 1, 0);
-            Gl.glVertexPointer(3, Gl.GL_FLOAT, 0, figure); //в качестве массива вершин используем
-            Gl.glEnableClientState(Gl.GL_VERTEX_ARRAY);
-            Gl.glEnableClientState(Gl.GL_NORMAL_ARRAY);
-            Gl.glEnable(Gl.GL_COLOR_MATERIAL);
+
+           // Gl.glEnableClientState(Gl.GL_VERTEX_ARRAY);
+            //Gl.glEnableClientState(Gl.GL_NORMAL_ARRAY);
+            //Gl.glEnable(Gl.GL_COLOR_MATERIAL);
 
             // характеристики материалов
             //http://devernay.free.fr/cours/opengl/materials.html
             //rubby 
             
-
-
             //////////////////////
-            Gl.glRotatef(X, 1, 0, 0);
-            Gl.glRotatef(Y, 0, 1, 0);
-            Gl.glRotatef(Z, 0, 0, 1);
+            //Gl.glRotatef(X, 1, 0, 0);
+            //Gl.glRotatef(Y, 0, 1, 0);
+            //Gl.glRotatef(Z, 0, 0, 1);
             //Gl.glColor3f(0.8f, 0.2f, 0.2f);
             
-            Gl.glColor3f(1,1,1);
+            Gl.glColor3f(0,1,0);
             Glut.glutSolidSphere(0.5, 20, 20);
 
             holst.Invalidate();
