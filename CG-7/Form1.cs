@@ -110,7 +110,8 @@ namespace CG_7
         {
             //фоновая подсветка
             //Gl.glShadeModel(Gl.GL_SMOOTH); //затенение
-            float[] ambient = { 0.2f, 0.2f, 0.2f, 1 };
+            float[] ambient = { 1f, 1f, 1f, 1 };
+            Gl.glEnable(Gl.GL_LIGHT0);
             Gl.glLightModelfv(Gl.GL_LIGHT_MODEL_AMBIENT, ambient);
             Gl.glEnable(Gl.GL_LIGHT0);
             float[] light0_col = { 1, 1, 1, 1 };
@@ -337,9 +338,29 @@ namespace CG_7
                 Gl.glDisable(Gl.GL_COLOR_MATERIAL);
                 float[] amb = { 1, 0, 0, 0 };
                 Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_AMBIENT, amb);
-                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_DIFFUSE, new float[] { .8f, .8f, .8f, 1 });
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_DIFFUSE, new float[] { 0.5f, 0.5f, 0.5f, 1 });
                 Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_SPECULAR, new float[] { 0, 0, 0, 1 });
                 Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_EMISSION, new float[] { 0, 0, 0, 1 });
+            }
+            if(s == 6)
+            {
+                Gl.glDisable(Gl.GL_COLOR_MATERIAL);
+                float[] amb = { .2f, .2f, .2f, 1 };
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_AMBIENT, amb);
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_DIFFUSE, new float[] { 0.2f, 0.2f, 0.2f, 1 });
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_SPECULAR, new float[] { 1, 0, 1 });
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_EMISSION, new float[] { 0, 0, 0 });
+                Gl.glMaterialf(Gl.GL_FRONT_AND_BACK, Gl.GL_SHININESS, 128);
+            }
+            if (s == 7)
+            {
+                Gl.glDisable(Gl.GL_COLOR_MATERIAL);
+                float[] amb = { .2f, .2f, .2f, 1 };
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_AMBIENT, amb);
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_DIFFUSE, new float[] { 1f, 1f, 1f, 1 });
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_SPECULAR, new float[] { 1, 1, 1 });
+                Gl.glMaterialfv(Gl.GL_FRONT_AND_BACK, Gl.GL_EMISSION, new float[] { 0, 0, 0 });
+                Gl.glMaterialf(Gl.GL_FRONT_AND_BACK, Gl.GL_SHININESS, 58);
             }
 
 
@@ -520,6 +541,18 @@ namespace CG_7
         private void вариант1GreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             l = 8;
+            Draw();
+        }
+
+        private void speToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s = 6;
+            Draw();
+        }
+
+        private void dfdfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            s = 7;
             Draw();
         }
     }
