@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.holst = new Tao.Platform.Windows.SimpleOpenGlControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // holst
@@ -43,20 +45,23 @@
             this.holst.DepthBits = ((byte)(16));
             this.holst.Dock = System.Windows.Forms.DockStyle.Fill;
             this.holst.Location = new System.Drawing.Point(0, 0);
-            this.holst.Margin = new System.Windows.Forms.Padding(4);
             this.holst.Name = "holst";
-            this.holst.Size = new System.Drawing.Size(845, 752);
+            this.holst.Size = new System.Drawing.Size(634, 611);
             this.holst.StencilBits = ((byte)(0));
             this.holst.TabIndex = 0;
             this.holst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.holst_KeyDown);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 752);
+            this.ClientSize = new System.Drawing.Size(634, 611);
             this.Controls.Add(this.holst);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -66,6 +71,7 @@
         #endregion
 
         private Tao.Platform.Windows.SimpleOpenGlControl holst;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
